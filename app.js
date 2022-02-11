@@ -15,27 +15,25 @@ function dragend(e) {
 }
 
 for (const placeholder of placeholders) {
-    console.log(placeholder);
-    // placeholder.addEventListener('dragover', dragover)
+    placeholder.addEventListener('dragover', dragover)
+    placeholder.addEventListener('dragenter', dragenter)
+    placeholder.addEventListener('dragleave', dragleave)
+    placeholder.addEventListener('drop', dragdrop)
 }
 
 function dragover(e) {
-    console.log('over', e)
-        // e.preventDefault()
+    e.preventDefault()
 }
 
 function dragenter(e) {
-    console.log('enter')
-        // e.target.classList.add('hovered')
+    e.target.classList.add('hovered')
 }
 
 function dragleave(e) {
-    console.log('le')
-        // e.target.classList.remove('hovered')
+    e.target.classList.remove('hovered')
 }
 
 function dragdrop(e) {
-    console.log('drop')
-        // e.target.classList.remove('hovered')
-        // e.target.append(item)
+    e.target.classList.remove('hovered')
+    e.target.append(item)
 }
